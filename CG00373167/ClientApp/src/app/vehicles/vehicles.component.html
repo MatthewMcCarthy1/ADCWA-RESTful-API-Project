@@ -1,0 +1,42 @@
+<!-- 
+  Table to display the list of vehicles and their details.
+  Each row represents a single vehicle with its attributes and an "Update" button.
+-->
+<table>
+    <thead>
+      <tr>
+        <th>Registration</th>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Owner CID</th>
+        <th>Owner Name</th>
+        <th>Mechanic MID</th>
+        <th>Mechanic Name</th>
+        <th>Mechanic Salary</th>
+        <th>Garage GID</th>
+        <th>Garage Location</th>
+        <th>Garage Budget</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Iterate over the vehicles array and display each vehicle's details -->
+      <tr *ngFor="let vehicle of vehicles">
+        <td>{{ vehicle.reg }}</td>
+        <td>{{ vehicle.make }}</td>
+        <td>{{ vehicle.model }}</td>
+        <td>{{ vehicle.owner.cid }}</td>
+        <td>{{ vehicle.owner.name }}</td>
+        <td>{{ vehicle.mechanic.mid }}</td>
+        <td>{{ vehicle.mechanic.name }}</td>
+        <td>{{ vehicle.mechanic.salary }}</td>
+        <td>{{ vehicle.mechanic.garage.gid }}</td>
+        <td>{{ vehicle.mechanic.garage.location }}</td>
+        <td>{{ vehicle.mechanic.garage.budget }}</td>
+        <td>
+          <!-- Update buton -->
+          <button (click)="updateVehicle(vehicle)">Update</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
