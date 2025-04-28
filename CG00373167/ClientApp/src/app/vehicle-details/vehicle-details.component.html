@@ -1,0 +1,49 @@
+<h2>Vehicle Details</h2>
+
+<div *ngIf="errorMessage" class="error-banner">
+    {{ errorMessage }}
+</div>
+
+<table>
+  <tr>
+    <td><label>Registration:</label></td>
+    <td><input type="text" [value]="vehicle.reg" readonly /></td>
+  </tr>
+  <tr>
+    <td><label>Make:</label></td>
+    <td><input type="text" [value]="vehicle.make" readonly /></td>
+  </tr>
+  <tr>
+    <td><label>Model:</label></td>
+    <td><input type="text" [value]="vehicle.model" readonly /></td>
+  </tr>
+  <tr>
+    <td><label>Mechanic MID:</label></td>
+    <td>
+      <input
+        type="text"
+        [(ngModel)]="updatedMechanicMid"
+        [value] = "vehicle.mechanic.mid"
+      />
+      <button (click)="updateMechanic()">Update</button>
+    </td>
+  </tr>
+  <tr>
+    <td><label>Mechanic Name:</label></td>
+    <td><input type="text" [value]="vehicle.mechanic.name" readonly /></td>
+  </tr>
+  <tr>
+    <td><label>Garage Location:</label></td>
+    <td><input type="text" [value]="vehicle.mechanic.garage.location" readonly /></td>
+  </tr>
+  <tr>
+      <button class="danger" (click)="deleteVehicle()">
+        Delete Vehicle
+      </button>
+  </tr>
+</table>
+<p>
+  <a (click)="navigateHome()" style="cursor:pointer; color:blue; text-decoration:underline;">
+    Home
+  </a>
+</p>

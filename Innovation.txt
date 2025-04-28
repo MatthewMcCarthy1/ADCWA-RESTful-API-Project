@@ -1,0 +1,1 @@
+Added a delete vehicle option in case of change of ownership etc.. 
